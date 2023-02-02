@@ -1,1 +1,90 @@
-[{"Name":"dgfs","Weight":0,"Price":435,"Year":1,"MemoryGB":4},{"Name":"bxgfvn","Weight":0,"Price":567,"Year":34,"MemoryGB":54},{"Name":"dgfadgfarghs","Weight":0,"Price":542,"Year":134134,"MemoryGB":56},{"Name":"gdfh","Weight":234,"Price":4326,"Year":154,"MemoryGB":23},{"Name":"gdhfdgf","Weight":5367,"Price":54723,"Year":26,"MemoryGB":74}]
+[
+  {
+    "Id": 1,
+    "Name": "dfsg",
+    "Weight": 131,
+    "Price": 4215,
+    "Year": 341,
+    "MemoryGb": 13
+  },
+  {
+    "Id": 3,
+    "Name": "fdag",
+    "Weight": 23,
+    "Price": 5,
+    "Year": 143,
+    "MemoryGb": 3
+  },
+  {
+    "Id": 4,
+    "Name": "dfsg",
+    "Weight": 131,
+    "Price": 4215,
+    "Year": 341,
+    "MemoryGb": 13
+  },
+  {
+    "Id": 5,
+    "Name": "dfsg",
+    "Weight": 131,
+    "Price": 4215,
+    "Year": 341,
+    "MemoryGb": 13
+  },
+  {
+    "Id": 8,
+    "Name": "dfsg",
+    "Weight": 131,
+    "Price": 4215,
+    "Year": 341,
+    "MemoryGb": 13
+  },
+  {
+    "Id": 2,
+    "Name": "fagds",
+    "Weight": 234,
+    "Price": 12,
+    "Year": 23,
+    "MemoryGb": 53
+  },
+  {
+    "Id": 7,
+    "Name": "sg",
+    "Weight": 524,
+    "Price": 623,
+    "Year": 8456,
+    "MemoryGb": 3
+  },
+  {
+    "Id": 10,
+    "Name": "фыва",
+    "Weight": 1534,
+    "Price": 145,
+    "Year": 1643,
+    "MemoryGb": 134
+  },
+  {
+    "Id": 9,
+    "Name": "впаы",
+    "Weight": 3415,
+    "Price": 542,
+    "Year": 134,
+    "MemoryGb": 254
+  },
+  {
+    "Id": 6,
+    "Name": "а43",
+    "Weight": 41,
+    "Price": 542,
+    "Year": 2323,
+    "MemoryGb": 254
+  },
+  {
+    "Id": 11,
+    "Name": "fsgdgth",
+    "Weight": 562,
+    "Price": 254,
+    "Year": 1,
+    "MemoryGb": 31
+  }
+]

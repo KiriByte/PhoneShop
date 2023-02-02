@@ -1,8 +1,9 @@
-﻿@model List<Phone>
+﻿@model List<PhoneModel>
 
 <table class="table table-bordered">
     <thead>
     <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Weight</th>
         <th>Price</th>
@@ -13,16 +14,22 @@
 
     <tbody>
 
-        @foreach (var phone in Model)
-        {
-            <tr>
-                <td>@phone.Name</td>
-                <td>@phone.Weight</td>
-                <td>@phone.Price</td>
-                <td>@phone.Year</td>
-                <td>@phone.MemoryGB</td>
-            </tr>
-        }
+    @foreach (var phone in Model)
+    {
+        <tr>
+            <td>@phone.Id</td>
+            <td>@phone.Name</td>
+            <td>@phone.Weight</td>
+            <td>@phone.Price</td>
+            <td>@phone.Year</td>
+            <td>@phone.MemoryGb</td>
+            <td>
+                <a type="button" class="btn btn-info" asp-controller="Home" asp-action="InfoPhonePage" asp-route-Id="@phone.Id">Info</a>
+                <a type="button" class="btn btn-danger" asp-controller="Home" asp-action="DeletePhoneById" asp-route-Id="@phone.Id">Delete</a>
+
+            </td>
+        </tr>
+    }
 
     </tbody>
 </table>

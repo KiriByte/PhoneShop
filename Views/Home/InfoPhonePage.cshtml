@@ -1,0 +1,27 @@
+﻿@model PhoneModel
+@{
+    var phone = Model;
+}
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Price</th>
+        <th>Year</th>
+        <th>Memory GB</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>@phone.Id</td>
+        <td>@phone.Name</td>
+        <td>@phone.Weight</td>
+        <td>@phone.Price</td>
+        <td>@phone.Year</td>
+        <td>@phone.MemoryGb</td>
+    </tr>
+    </tbody>
+</table>

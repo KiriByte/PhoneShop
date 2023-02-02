@@ -6,31 +6,57 @@ namespace PhoneShop.Service
     public class PhoneService
     {
         private readonly string pathToFile = @".\wwwroot\db\phones.json";
-        List<Phone> phones= new List<Phone>();
+        List<PhoneModel> phones = new List<PhoneModel>();
 
-        public void AddPhoneToList(Phone phone)
+        public void AddPhoneToList(PhoneModel phone)
         {
             DeserializeList();
+            phone.Id = FindFirstFreeId();
             phones.Add(phone);
             SerializeList();
         }
 
-        public List<Phone> ShowPhones()
+        public List<PhoneModel> ShowPhones()
         {
             DeserializeList();
             return phones;
         }
 
+
+        public PhoneModel ShowPhoneInfoById(int id)
+        {
+            DeserializeList();
+            return phones.Find((phone) => phone.Id == id);
+        }
+
+        public void DeletePhoneById(int id)
+        {
+            DeserializeList();
+            var phone = phones.Find((phone) => phone.Id == id);
+            phones.Remove(phone);
+            SerializeList();
+        }
+
+        private int FindFirstFreeId()
+        {
+            DeserializeList();
+            var orderedId = from phone in phones
+                orderby phone.Id
+                select phone.Id;
+            var result = Enumerable.Range(1, int.MaxValue).Except(orderedId).First();
+            return result;
+        }
+
         private void SerializeList()
         {
-            string json = JsonConvert.SerializeObject(phones);
+            string json = JsonConvert.SerializeObject(phones,Formatting.Indented);
             File.WriteAllText(pathToFile, json);
         }
 
         private void DeserializeList()
         {
             string json = ReadFileToString();
-            phones = JsonConvert.DeserializeObject<List<Phone>>(json) ?? new List<Phone>();
+            phones = JsonConvert.DeserializeObject<List<PhoneModel>>(json) ?? new List<PhoneModel>();
         }
 
         private string ReadFileToString()
@@ -42,6 +68,5 @@ namespace PhoneShop.Service
 
             return File.ReadAllText(pathToFile);
         }
-
     }
 }

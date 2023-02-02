@@ -11,11 +11,11 @@ namespace PhoneShop.Controllers
         private readonly ILogger<HomeController> _logger;
         private PhoneService _service;
 
-       
+
         public HomeController(ILogger<HomeController> logger, PhoneService service)
         {
             _logger = logger;
-            _service= service;
+            _service = service;
         }
 
         public IActionResult Index()
@@ -23,14 +23,14 @@ namespace PhoneShop.Controllers
             return View();
         }
 
-        
+
         public IActionResult AddPhonePage()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddPhone(Phone phone)
+        public IActionResult AddPhone(PhoneModel phone)
         {
             _service.AddPhoneToList(phone);
             return RedirectToAction("Index");
@@ -38,10 +38,26 @@ namespace PhoneShop.Controllers
 
         public IActionResult AllPhonesPage()
         {
-            
             return View(_service.ShowPhones());
         }
-        
+
+        public IActionResult InfoPhonePage(int id)
+        {
+            var result = _service.ShowPhoneInfoById(id);
+            if (result == null)
+            {
+                return RedirectToAction("Error");
+            }
+
+            return View(result);
+        }
+
+        public IActionResult DeletePhoneById(int id)
+        {
+            _service.DeletePhoneById(id);
+            return RedirectToAction("Index");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
